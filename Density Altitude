@@ -1,0 +1,23 @@
+# Density altitude is pressure altitude corrected for temperature
+
+# International Standard Day
+standard_temp = int(30)
+standard_baro = float(29.92)
+ambient_temp = int(input("Enter ambient temp in celsius:"))
+altimeter = float(input("Enter altimeter:"))
+takeoff_altitude = int(input("Enter takeoff elevation:"))
+
+
+
+def Denisty_calc():  # calculates density altitude
+
+    pressure_altitude = int((standard_baro - altimeter) * 1000 + takeoff_altitude)
+
+    density_altitude = int(pressure_altitude + 120 * (ambient_temp-(15 - (takeoff_altitude/1000 ) * 2)))
+
+    print("The pressure altitude is" ,pressure_altitude,"Feet MSL")
+    print("The density altitude is" ,density_altitude, "Feet MSL")
+
+
+Denisty_calc()
+
